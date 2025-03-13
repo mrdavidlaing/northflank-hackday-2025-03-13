@@ -3,11 +3,8 @@ package main
 import (
 	"encoding/json"
 	"net/http"
-)
 
-// Version information
-const (
-	Version = "v0.1.1-dev"
+	"github.com/mrdavidlaing/simple-go-server/version"
 )
 
 // InfoResponse represents the JSON structure for the /info endpoint
@@ -25,7 +22,7 @@ func infoHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Create response
 	response := InfoResponse{
-		Version: Version,
+		Version: version.Version,
 	}
 
 	// Set content type
